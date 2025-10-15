@@ -3,7 +3,7 @@ name: Auto Release
 on:
   workflow_dispatch: # Allow manual trigger
   schedule:
-    - cron: "*/1 * * * *" # Runs every 1 minute (for testing)
+    - cron: "*/5 * * * *" # Runs every 5 minutes (GitHub's reliable minimum)
 
 jobs:
   release:
