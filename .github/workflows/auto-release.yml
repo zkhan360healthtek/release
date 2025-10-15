@@ -3,7 +3,11 @@ name: 🧠 Automated Weekly Release
 on:
   schedule:
     - cron: "0 0 * * 0" # Runs every Sunday midnight (UTC)
-  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write # ✅ Important for release-it to create tags & releases
+  actions: read
 
 jobs:
   release:
@@ -29,7 +33,8 @@ jobs:
         run: npx release-it --ci
 
       - name: 📨 Notify about release
-        if: always()
+        if: success()
         run: |
-          echo "✅ Automated Release completed!"
-          echo "Check your changelog: https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md"
+          echo "✅ Automated Release completed successfully!"
+          echo "📦 Check CHANGELOG.md:"
+          echo "https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md"
