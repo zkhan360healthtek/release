@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allows manual trigger from GitHub Actions UI
 
 permissions:
-  contents: write # ✅ Needed for pushing commits and tags
+  contents: write # ✅ Needed for committing & tagging
   packages: write
 
 jobs:
@@ -17,28 +17,31 @@ jobs:
       - name: 📦 Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for changelog generation
+          fetch-depth: 0
 
-      - name: 🧩 Setup Node
+      - name: 🧩 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # ✅ Required for regex support
+          node-version: 22 # ✅ Node 22 fixes regex issues
 
       - name: 🔧 Configure Git identity
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Zeeshan Khan (CI Bot)"
+          git config --global user.email "zkhan@360healthtek.com"
+          git config --global --add safe.directory /github/workspace
+          echo "✅ Git identity configured:"
+          git config --list | grep user
 
       - name: 📥 Install dependencies
         run: npm ci
 
-      - name: 🚀 Run release-it (auto mode)
+      - name: 🚀 Run release-it (automated)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx release-it --ci
 
-      - name: 📨 Notify about release
+      - name: 📨 Notify completion
         if: always()
         run: |
           echo "✅ Automated Release completed!"
-          echo "Check your changelog: https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md"
+          echo "🔗 View CHANGELOG: https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md"
