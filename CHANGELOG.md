@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.2](https://github.com/zkhan360healthtek/release/compare/v0.7.1...v0.7.2) (2025-10-15)
+
+### 🔧 Refactors
+
+* Refactors ([90fef26](https://github.com/zkhan360healthtek/release/commit/90fef26a29beeb639dff746cc22690eb98aaca72))
+
+### 🎨 Styles
+
+* Styles ([55324aa](https://github.com/zkhan360healthtek/release/commit/55324aace867e443aa7bcfd403e84eeda1c0d1ca))
+
+### 🧪 Tests
+
+* Tests ([947b56c](https://github.com/zkhan360healthtek/release/commit/947b56c12ab09e6649b312439154ca5f839eac47))
+
 ## [0.7.1](https://github.com/zkhan360healthtek/release/compare/v0.7.0...v0.7.1) (2025-10-15)
 
 ## [0.7.0](https://github.com/zkhan360healthtek/release/compare/v0.6.3...v0.7.0) (2025-10-15)
