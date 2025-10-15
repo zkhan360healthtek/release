@@ -4,7 +4,7 @@
     "commitMessage": "chore(release): v${version}",
     "tag": true,
     "tagName": "v${version}",
-    "push": false,
+    "push": true,
     "requireUpstream": false
   },
   "npm": {
@@ -29,8 +29,10 @@
         ]
       },
       "infile": "CHANGELOG.md",
-      "changelogHeader": "# Changelog\n\n"
+      "changelogHeader": "# Changelog\n\n",
+      "writerOpts": {
+        "transform": "./changelog-transform.js"
+      }
     }
-  },
-  "github": false
+  }
 }
