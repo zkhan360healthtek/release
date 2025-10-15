@@ -1,9 +1,9 @@
 name: Auto Release
 
 on:
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *" # Runs every 5 minutes (GitHub's reliable minimum)
+    - cron: "*/5 * * * *" # Every 5 minutes
 
 jobs:
   release:
@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write
       packages: write
+      issues: write
 
     steps:
       - name: Checkout repository
@@ -35,9 +36,23 @@ jobs:
       - name: Pull latest main branch
         run: git pull origin main --rebase
 
-      - name: Run release-it (auto mode)
-        run: npx release-it --ci --git.tagForce
+      - name: Run release-it
+        id: release
+        run: |
+          npx release-it --ci --git.tagForce
+        continue-on-error: true
 
       - name: Push release changes
+        if: ${{ success() }}
         run: |
           git push origin main --tags
+
+      - name: Notify via GitHub (custom message)
+        if: always()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🚀 Auto Release Notification"
+          content-filepath: .github/release-message.md
+          labels: |
+            release
+            notification
