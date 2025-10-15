@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.6.2](https://github.com/zkhan360healthtek/release/compare/v0.6.1...v0.6.2) (2025-10-15)
+
 ## [0.6.1](https://github.com/zkhan360healthtek/release/compare/v0.6.0...v0.6.1) (2025-10-15)
 
 ### docs
