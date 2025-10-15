@@ -1,7 +1,9 @@
 name: Auto Release
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: "*/1 * * * *" # Every 5 minutes
 
 jobs:
   release:
