@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.0](https://github.com/zkhan360healthtek/release/compare/v0.5.1...v0.6.0) (2025-10-15)
+
+### feat
+
+* Features 3 ([](https://github.com/zkhan360healthtek/release/commit/6e6925d53c40dec53509625e33779b0a76ff8a66))
+
 ## [0.5.1](https://github.com/zkhan360healthtek/release/compare/v0.5.0...v0.5.1) (2025-10-15)
 
 ### chore
