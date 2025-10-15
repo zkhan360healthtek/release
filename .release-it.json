@@ -32,5 +32,7 @@
       "changelogHeader": "# Changelog\n\n"
     }
   },
-  "github": false
+  "github": {
+    "release": true
+  }
 }
