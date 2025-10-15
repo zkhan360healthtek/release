@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.1](https://github.com/zkhan360healthtek/release/compare/v0.3.0...v0.3.1) (2025-10-15)
+
+### Bug Fixes
+
+* add git identity for CI release ([5e0dcbc](https://github.com/zkhan360healthtek/release/commit/5e0dcbc8f087ca5b7a0e777873604f7c9d6bd7c2))
+* **ci:** add git identity for release bot ([b207274](https://github.com/zkhan360healthtek/release/commit/b20727406853f6012d62098d51b102bb29d6191a))
+* upgrade Node to 22 for release-it regex support ([a14c4f4](https://github.com/zkhan360healthtek/release/commit/a14c4f4bb3054f0956723428b1dc93e088e7f75a))
+* workflow permissions ([3d98a7e](https://github.com/zkhan360healthtek/release/commit/3d98a7e227afd3b61a1dba1695cb05e0faf7c21c))
+
 ## [0.3.0](https://github.com/zkhan360healthtek/release/compare/v0.2.0...v0.3.0) (2025-10-15)
 
 ### Features
