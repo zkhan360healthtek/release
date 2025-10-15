@@ -14,8 +14,6 @@ function App() {
       </p>
       <p className="read-the-docs">Features</p>
       <p className="read-the-docs">Bug Fixes</p>
-      <p className="read-the-docs">Chores</p>
-      <p className="read-the-docs">Chores</p>
     </>
   );
 }
