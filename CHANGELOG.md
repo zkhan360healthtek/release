@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0](https://github.com/zkhan360healthtek/release/compare/v0.2.0...v0.3.0) (2025-10-15)
+
+### Features
+
+* all new page 2 ([e3e19e9](https://github.com/zkhan360healthtek/release/commit/e3e19e924fdd0a4cc99004e0f1557d930a7c79a8))
+
 ## [0.2.0](https://github.com/zkhan360healthtek/release/compare/v0.1.3...v0.2.0) (2025-10-15)
 
 ### Features
