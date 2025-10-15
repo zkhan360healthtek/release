@@ -10,28 +10,16 @@
   "npm": {
     "publish": false
   },
+  "github": {
+    "release": true
+  },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          { "type": "feat", "section": "✨ Features" },
-          { "type": "fix", "section": "🐛 Bug Fixes" },
-          { "type": "chore", "section": "🧹 Chores" },
-          { "type": "docs", "section": "📝 Documentation" },
-          { "type": "refactor", "section": "🔧 Refactors" },
-          { "type": "style", "section": "🎨 Styles" },
-          { "type": "test", "section": "🧪 Tests" },
-          { "type": "perf", "section": "⚡ Performance Improvements" },
-          { "type": "ci", "section": "🤖 CI/CD" },
-          { "type": "build", "section": "🏗️ Build System" },
-          { "type": "revert", "section": "⏪ Reverts" }
-        ]
-      },
+      "preset": "conventionalcommits",
       "infile": "CHANGELOG.md",
       "changelogHeader": "# Changelog\n\n",
       "writerOpts": {
-        "transform": "./changelog-transform.js"
+        "transform": "changelog-transform.js"
       }
     }
   }

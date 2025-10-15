@@ -1,13 +1,10 @@
 module.exports = function (commit, context) {
-  if (!commit.type || !commit.subject) return;
-
-  // Use full commit hash
   const fullHash = commit.hash || "";
+  let type = commit.type ? commit.type : "other";
+  let message = commit.subject || commit.header || "";
 
-  // Generate markdown link for commit
-  const commitLink = fullHash
-    ? `[${fullHash}](https://github.com/${context.owner}/${context.repository}/commit/${fullHash})`
-    : "";
+  // Capitalize first letter of type for section headers
+  type = type.toLowerCase();
 
-  return `* ${commit.subject} (${commitLink})\n`;
+  return `* ${message} commit ID(${fullHash})`;
 };
