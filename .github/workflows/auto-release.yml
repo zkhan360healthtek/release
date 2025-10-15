@@ -46,13 +46,3 @@ jobs:
         if: ${{ success() }}
         run: |
           git push origin main --tags
-
-      - name: Notify via GitHub (custom message)
-        if: always()
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "🚀 Auto Release Notification"
-          content-filepath: .github/release-message.md
-          labels: |
-            release
-            notification
