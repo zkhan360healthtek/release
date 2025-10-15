@@ -4,33 +4,33 @@
     "commitMessage": "chore(release): v${version}",
     "tag": true,
     "tagName": "v${version}",
-    "push": true,
+    "push": false,
     "requireUpstream": false
-  },
-  "github": {
-    "release": true
   },
   "npm": {
     "publish": false
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "preset": "conventionalcommits",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          { "type": "feat", "section": "✨ Features" },
+          { "type": "fix", "section": "🐛 Bug Fixes" },
+          { "type": "chore", "section": "🧹 Chores" },
+          { "type": "docs", "section": "📝 Documentation" },
+          { "type": "refactor", "section": "🔧 Refactors" },
+          { "type": "style", "section": "🎨 Styles" },
+          { "type": "test", "section": "🧪 Tests" },
+          { "type": "perf", "section": "⚡ Performance Improvements" },
+          { "type": "ci", "section": "🤖 CI/CD" },
+          { "type": "build", "section": "🏗️ Build System" },
+          { "type": "revert", "section": "⏪ Reverts" }
+        ]
+      },
       "infile": "CHANGELOG.md",
-      "changelogHeader": "# Changelog\n\n",
-      "types": [
-        { "type": "feat", "section": "✨ Features" },
-        { "type": "fix", "section": "🐛 Bug Fixes" },
-        { "type": "chore", "section": "🧹 Chores" },
-        { "type": "docs", "section": "📝 Documentation" },
-        { "type": "refactor", "section": "🔧 Refactors" },
-        { "type": "style", "section": "🎨 Styles" },
-        { "type": "test", "section": "🧪 Tests" },
-        { "type": "perf", "section": "⚡ Performance Improvements" },
-        { "type": "ci", "section": "🤖 CI/CD" },
-        { "type": "build", "section": "🏗️ Build System" },
-        { "type": "revert", "section": "⏪ Reverts" }
-      ]
+      "changelogHeader": "# Changelog\n\n"
     }
-  }
+  },
+  "github": false
 }

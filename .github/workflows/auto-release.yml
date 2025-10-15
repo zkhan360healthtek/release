@@ -1,47 +1,37 @@
-name: 🧠 Automated Weekly Release
+name: Auto Release
 
 on:
-  schedule:
-    - cron: "0 0 * * 0" # Runs every Sunday midnight (UTC)
-  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
-
-permissions:
-  contents: write # ✅ Needed for committing & tagging
-  packages: write
+  workflow_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      packages: write
+
     steps:
-      - name: 📦 Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: 🧩 Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # ✅ Node 22 fixes regex issues
+          node-version: 22
 
-      - name: 🔧 Configure Git identity
-        run: |
-          git config --global user.name "Zeeshan Khan (CI Bot)"
-          git config --global user.email "zkhan@360healthtek.com"
-          git config --global --add safe.directory /github/workspace
-          echo "✅ Git identity configured:"
-          git config --list | grep user
-
-      - name: 📥 Install dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: 🚀 Run release-it (automated)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx release-it --ci
-
-      - name: 📨 Notify completion
-        if: always()
+      - name: Configure Git identity
         run: |
-          echo "✅ Automated Release completed!"
-          echo "🔗 View CHANGELOG: https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md"
+          git config --global user.name "release-bot"
+          git config --global user.email "release-bot@github.com"
+
+      - name: Pull latest main branch
+        run: git pull origin main --rebase
+
+      - name: Run release-it
+        run: npx release-it --ci --git.tagForce
