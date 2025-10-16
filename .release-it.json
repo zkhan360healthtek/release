@@ -4,7 +4,7 @@
     "commitMessage": "chore(release): v${version}",
     "tag": true,
     "tagName": "v${version}",
-    "push": false,
+    "push": true,
     "requireUpstream": false
   },
   "npm": {
