@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.14.0](https://github.com/zkhan360healthtek/release/compare/v0.13.0...v0.14.0) (2025-10-16)
+
+### ✨ Features
+
+* add a new git Features ([f82195b](https://github.com/zkhan360healthtek/release/commit/f82195b3800277a329c6a5655720c343d51a9fc4))
+
 ## [0.13.0](https://github.com/zkhan360healthtek/release/compare/v0.12.4...v0.13.0) (2025-10-16)
 
 ### ✨ Features
