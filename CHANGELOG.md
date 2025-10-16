@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.0](https://github.com/zkhan360healthtek/release/compare/v0.14.0...v0.15.0) (2025-10-16)
+
+### ✨ Features
+
+* Enable automatic GitHub Releases via release-it ([ffd1860](https://github.com/zkhan360healthtek/release/commit/ffd18604e076ff205c5f013c0d4edb4784963c9e))
+
 ## [0.14.0](https://github.com/zkhan360healthtek/release/compare/v0.13.0...v0.14.0) (2025-10-16)
 
 ### ✨ Features
