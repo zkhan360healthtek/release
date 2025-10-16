@@ -38,6 +38,8 @@ jobs:
 
       - name: Run release-it
         id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx release-it --ci --git.tagForce
         continue-on-error: true
