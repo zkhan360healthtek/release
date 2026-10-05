@@ -1,7 +1,7 @@
 {
   "name": "test",
   "private": true,
-  "version": "0.16.355",
+  "version": "0.16.356",
   "type": "module",
   "scripts": {
     "dev": "vite",
